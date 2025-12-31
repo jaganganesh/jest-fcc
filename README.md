@@ -148,7 +148,7 @@ Used for testing asynchronous functions using `async` and `await`.
 
 ```js
 /* Async/Await */
-test("should return 'Konnichiwa' w/ Async/Await", async () => {
+test("should return 'Konnichiwa' using Async/Await", async () => {
   const data = await testPromise();
   expect(data).toBe("Konnichiwa");
 });
@@ -162,7 +162,7 @@ test("should return 'Konnichiwa' w/ Async/Await", async () => {
 
 ```js
 /* jest.fn */
-test("should return 43 w/ mock function", () => {
+test("should return 43 using mock function", () => {
   const mockFunc = jest.fn((value) => 42 + value);
   expect(mockFunc(1)).toBe(43);
 });

@@ -22,3 +22,22 @@ export const testToThrow = (numericValue) => {
     throw new Error("Invalid Input");
   }
 };
+
+// Asynchronous
+export const testCallback = (callback) => {
+  setTimeout(() => {
+    callback("Bonjour");
+  }, 1000);
+};
+
+export const testPromise = (shouldReject = false) => {
+  return new Promise((resolve, reject) => {
+    if (shouldReject) {
+      reject("Error");
+    } else {
+      setTimeout(() => {
+        resolve("Konnichiwa");
+      }, 1000);
+    }
+  });
+};

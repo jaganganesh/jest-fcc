@@ -74,3 +74,35 @@ test("should return 'Konnichiwa' w/ Async/Await", async () => {
   const data = await testPromise();
   expect(data).toBe("Konnichiwa");
 });
+
+/*
+    Mock Functions and Spies
+*/
+
+/* jest.fn */
+test("should return 43 w/ mock function", () => {
+  const mockFunc = jest.fn((value) => 42 + value);
+  expect(mockFunc(1)).toBe(43);
+});
+
+/* toHaveBeenCalledWith */
+test("should return 43 using toHaveBeenCalledWith", () => {
+  const mockFunc = jest.fn((value) => 42 + value);
+  expect(mockFunc(1)).toBe(43);
+  expect(mockFunc).toHaveBeenCalledWith(1);
+});
+
+/* jest.spyOn */
+test("should verify that 'play' was called using spyOn", () => {
+  const videoPlayer = {
+    play() {
+      return true;
+    },
+  };
+
+  const spy = jest.spyOn(videoPlayer, "play");
+  videoPlayer.play();
+
+  expect(spy).toHaveBeenCalled(); // Check if the function was called
+  spy.mockRestore(); // Restore the original function after the test
+});

@@ -156,7 +156,7 @@ test("should return 'Konnichiwa' using Async/Await", async () => {
 
 ### Mock Functions and Spies
 
-### jest.fn
+#### jest.fn
 
 `jest.fn()` allows you to track function calls, arguments, return values, and execution behavior during tests.
 
@@ -168,7 +168,7 @@ test("should return 43 using mock function", () => {
 });
 ```
 
-### toHaveBeenCalledWith
+#### toHaveBeenCalledWith
 
 Used to verify that a mock function was called with specific arguments.
 
@@ -181,7 +181,7 @@ test("should return 43 using toHaveBeenCalledWith", () => {
 });
 ```
 
-### jest.spyOn
+#### jest.spyOn
 
 Lets you watch a function inside an object.
 
